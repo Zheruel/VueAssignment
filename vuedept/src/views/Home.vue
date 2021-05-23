@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div id="userBoxList">
-      <UserBox class="userBox" v-for="user in userList" :key="user" :user="user"/>
+      <UserBox class="userBox" v-for="(user, index) in userList" :key="index" :user="user"/>
     </div>
   </div>
 </template>
