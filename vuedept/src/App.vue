@@ -12,16 +12,10 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Header from '@/components/Header.vue' // @ is an alias to /src
-import UserService from './services/UserService'
 
 @Component({
   components: {
     Header
-  },
-
-  created () {
-    const userService = new UserService()
-    userService.getUsers()
   }
 })
 export default class App extends Vue {}

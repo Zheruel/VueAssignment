@@ -1,21 +1,22 @@
 <template>
   <div class="userBox">
     <div class="userImage">
-        <img src="https://randomuser.me/api/portraits/women/30.jpg">
+        <img :src="user.pictureURL">
     </div>
     <div class="userContent">
-        <p>Mr Jane</p>
-        <p>Doe</p>
+        <p>{{user.title}} {{user.firstName}}</p>
+        <p>{{user.lastName}}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { RandomUser } from '../interfaces/RandomUser'
 
 @Component
 export default class UserBox extends Vue {
-  @Prop() private msg!: string;
+  @Prop() private user!: RandomUser;
 }
 </script>
 

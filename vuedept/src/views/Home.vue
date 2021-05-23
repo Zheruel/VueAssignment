@@ -1,13 +1,15 @@
 <template>
   <div id="home">
     <div id="userBoxList">
-      <UserBox class="userBox" v-for="n in 30" :key="n" msg="test"/>
+      <UserBox class="userBox" v-for="n in 30" :key="n" :user="userList[0]"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { RandomUser } from '../interfaces/RandomUser'
+import UserService from '../services/UserService'
 import UserBox from '@/components/UserBox.vue' // @ is an alias to /src
 
 @Component({
@@ -15,7 +17,17 @@ import UserBox from '@/components/UserBox.vue' // @ is an alias to /src
     UserBox
   }
 })
-export default class Home extends Vue {}
+
+export default class Home extends Vue {
+  userList: Array<RandomUser> = []
+
+  created (): void {
+    const userService = new UserService()
+    this.userList = userService.getUsers()
+
+    console.log(this.userList)
+  }
+}
 </script>
 
 <style scoped lang="scss">

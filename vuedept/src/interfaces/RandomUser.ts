@@ -1,5 +1,5 @@
 export interface RandomUser {
-    pictrueURL: string,
+    pictureURL: string,
     title: string,
     firstName: string,
     lastName: string,

@@ -8,7 +8,7 @@ export default class UserService {
     Vue.axios.get('https://randomuser.me/api/?results=15').then((response) => {
       for (const element of response.data.results) {
         const user: RandomUser = {
-          pictrueURL: element.picture.large,
+          pictureURL: element.picture.large,
           title: element.name.title,
           firstName: element.name.first,
           lastName: element.name.last,
@@ -22,7 +22,6 @@ export default class UserService {
       }
     })
 
-    console.log(userList)
     return userList
   }
 }
