@@ -1,0 +1,3 @@
+Inače bi bila dobra praksa uzimati listu trenutnih korisnika svaki put tijekom posjeta Home stranici tako da dobijemo current listu u slučaju međuvremene promijene. Također bih volio da mogu
+pozvati nešto tipa API/user/id da dobijem details view za tog korisnika, ali to sa ovim API-em nije moguće jer dobivam random fake usere stoga ih na početku povućem ako ih već nemam u Vuex
+i onda se koristim njima istima sve dok se Vuex ne isprazni.

@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div id="userBoxList">
-      <UserBox class="userBox" v-for="(user, index) in userList" :key="index" :user="user"/>
+      <UserBox v-for="(user, index) in userList" :key="index" :user="user" @click.native="routeToItem(index)" />
     </div>
   </div>
 </template>
@@ -22,10 +22,18 @@ export default class Home extends Vue {
   userList: Array<RandomUser> = []
 
   created (): void {
-    const userService = new UserService()
-    this.userList = userService.getUsers()
+    if (this.$store.state.userList.length === 0) {
+      const userService = new UserService()
+      this.userList = userService.getUsers()
 
-    this.$store.commit('setUserList', this.userList)
+      this.$store.commit('setUserList', this.userList)
+    } else {
+      this.userList = this.$store.state.userList
+    }
+  }
+
+  routeToItem (destinationid: number): void {
+    this.$router.push('item/' + destinationid)
   }
 }
 </script>
