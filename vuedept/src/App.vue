@@ -21,7 +21,7 @@ import UserService from './services/UserService'
 
   created () {
     const userService = new UserService()
-    userService.getUser()
+    userService.getUsers()
   }
 })
 export default class App extends Vue {}
