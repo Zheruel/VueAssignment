@@ -56,4 +56,11 @@ export default class UserBox extends Vue {
 .userBox:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
+@media screen and (max-width: 1024px) {
+  .userBox{
+    width: 100%;
+    margin-right: 0;
+  }
+}
 </style>
