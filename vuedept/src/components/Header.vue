@@ -14,6 +14,7 @@ export default class Header extends Vue {}
 <style scoped lang="scss">
 #header {
     padding: 15px;
+    margin-bottom: 40px;
     border-bottom: solid;
 }
 </style>
