@@ -25,7 +25,7 @@ export default class Home extends Vue {
     const userService = new UserService()
     this.userList = userService.getUsers()
 
-    console.log(this.userList)
+    this.$store.commit('setUserList', this.userList)
   }
 }
 </script>

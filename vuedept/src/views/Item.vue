@@ -5,21 +5,21 @@
         <img id="backArrow" src="../assets/backarrow.svg">
       </router-link>
     </div>
-    <div id="detailsCard">
-        <img src="https://randomuser.me/api/portraits/men/4.jpg">
-        <p>Title Name Name</p>
-        <p>Date of birth</p>
-        <p>E-mail</p>
-        <p>Phone number</p>
-    </div>
+    <DetailsCard />
     <h1>This is the item page {{$route.params.id}}</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import DetailsCard from '@/components/DetailsCard.vue'
 
-@Component
+@Component({
+  components: {
+    DetailsCard
+  }
+})
+
 export default class Item extends Vue {
   @Prop() private id!: number;
 }
