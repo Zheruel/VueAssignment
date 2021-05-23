@@ -5,14 +5,17 @@
         <img id="backArrow" src="../assets/backarrow.svg">
       </router-link>
     </div>
-    <DetailsCard />
-    <h1>This is the item page {{$route.params.id}}</h1>
+    <DetailsCard v-if="this.user != undefined" :user='this.user'/>
+    <p v-if="this.user == undefined">
+      User data is not in vuex, please visit the home page as the app only grabs user data there by design.
+    </p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import DetailsCard from '@/components/DetailsCard.vue'
+import { RandomUser } from '../interfaces/RandomUser'
 
 @Component({
   components: {
@@ -21,7 +24,7 @@ import DetailsCard from '@/components/DetailsCard.vue'
 })
 
 export default class Item extends Vue {
-  @Prop() private id!: number;
+    user: RandomUser = this.$store.state.userList[this.$route.params.id]
 }
 </script>
 

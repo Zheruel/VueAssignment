@@ -1,10 +1,10 @@
 <template>
   <div id="detailsCard">
-    <img src="https://randomuser.me/api/portraits/men/4.jpg">
-      <p>Title Name Name</p>
-      <p>Date of birth</p>
-      <p>E-mail</p>
-      <p>Phone number</p>
+    <img :src="user.pictureURL">
+      <p>{{user.title}} {{user.firstName}} {{user.lastName}}</p>
+      <p>{{user.dateOfBirth}}</p>
+      <p>{{user.email}}</p>
+      <p>{{user.phoneNumber}}</p>
     </div>
 </template>
 
